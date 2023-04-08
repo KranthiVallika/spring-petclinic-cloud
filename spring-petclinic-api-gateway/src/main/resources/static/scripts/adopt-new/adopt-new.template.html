@@ -1,0 +1,50 @@
+<h2>Adopt Pet</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Owner Name</th>
+        <td>{{$ctrl.pet.name}}</td>
+    </tr>
+    <tr>
+        <th>Pet Name</th>
+        <td>{{$ctrl.pet.birthday}}</td>
+    </tr>
+    <tr>
+        <td>
+            <a class="btn btn-default" ui-sref="ownerEdit({ownerId: $ctrl.owner.id})">Submit</a>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table table-striped">
+    <tr ng-repeat="pet in $ctrl.owner.pets track by pet.id">
+        <td valign="top">
+            <dl class="dl-horizontal">
+                <dt>Name</dt>
+                <dd><a ui-sref="petEdit({ownerId: $ctrl.owner.id, petId: pet.id})">{{pet.name}}</a></dd>
+                <dt>Birth Date</dt>
+                <dd>{{pet.birthDate | date:'yyyy MMM dd'}}</dd>
+                <dt>Type</dt>
+                <dd>{{pet.type.name}}</dd>
+            </dl>
+        </td>
+        <td valign="top">
+            <table class="table-condensed">
+                <thead>
+                <tr>
+                    <th>Visit Date</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="visit in pet.visits track by visit.id">
+                    <td>{{visit.date | date:'yyyy MMM dd'}}</td>
+                    <td>{{visit.description}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+

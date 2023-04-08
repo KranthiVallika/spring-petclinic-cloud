@@ -26,8 +26,17 @@
                         <li><a ui-sref="ownerNew"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Register</span></a></li>
                     </ul>
                 </li>
+                <li ui-sref-active="active" class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">pets<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
 
-                <li ui-sref-active="active">
+                        <li><a ui-sref="adopt"><span class="glyphicon" aria-hidden="true"></span><span> add pet</span></a></li>
+                        <li><a ui-sref="adoptNew"><span class="glyphicon" aria-hidden="true"></span><span> adopt pet</span></a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" >
                     <a ui-sref="vets" title="veterinarians">
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                         <span>Veterinarians</span>

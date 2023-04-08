@@ -60,6 +60,16 @@ class PetResource {
         return save(pet, petRequest);
     }
 
+    @PostMapping("/pet")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Pet petCreate(
+        @RequestBody PetRequest petRequest
+        ) {
+
+        final Pet pet = new Pet();
+        return save(pet, petRequest);
+    }
+
     @PutMapping("/owners/*/pets/{petId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void processUpdateForm(@RequestBody PetRequest petRequest) {
